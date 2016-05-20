@@ -66,7 +66,7 @@ def multi_insert_param2(con):
     print('multi_insert_param2(con) ok')
 
 """直接讀取csv檔，insert to oracle"""
-def read_csv_direct_2_oracle(file_name, default_encoding='UTF-8'):
+def insert_cycle(file_name, default_encoding='UTF-8'):
     with open(file_name,'r',encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()
@@ -79,11 +79,11 @@ def read_csv_direct_2_oracle(file_name, default_encoding='UTF-8'):
         con.commit();
         con.close()
         print(param)
-        print('read_csv_direct_2_oracle ok')
+        print('insert_cycle ok')
 
 
 """5"""
-# read_csv_direct_2_oracle('insert_data.csv')
+# insert_cycle('insert_data.csv')
 
 
 """4"""

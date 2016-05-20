@@ -10,7 +10,7 @@ import cx_Oracle
 con = cx_Oracle.connect('agentflow','agentflow','localhost:1521/A0801')
 # print(con.version)
 cursor = con.cursor()
-sql = """ select * from mem_geninf where username='黃獻葦'"""
+sql = """ select * from mem_geninf where loginid='a0801'"""
 cursor.execute(sql)
 result = cursor.fetchall()
 for row in result:
