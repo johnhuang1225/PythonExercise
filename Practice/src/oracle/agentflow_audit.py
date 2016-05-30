@@ -16,7 +16,7 @@ def get_local_oracle_connectin():
 
 """insert to audit_cycle table"""
 def insert_cycle(file_name, default_encoding='UTF-8'):
-    with open(file_name,'r', encoding=default_encoding) as csvfile:
+    with open(file_name, 'r', encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()
         param = []
@@ -53,7 +53,7 @@ def insert_operation(file_name, default_encoding='UTF-8'):
 
 
 """insert to insert_matter table"""
-def insert_matter(file_name, default_encoding='UTF-8'):
+def insert_matter_each(file_name, default_encoding='UTF-8'):
     with open(file_name, 'r', encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()
@@ -71,10 +71,27 @@ def insert_matter(file_name, default_encoding='UTF-8'):
         print('ok')
 
 
-# insert_cycle('01.cycle.csv')
-# insert_operation('02.operation.csv')
+def insert_matter():
+    items = [
+             '03.matter-01-AS.csv',  # ok
+             '03.matter-02-AP.csv',  # ok
+             '03.matter-03-AO.csv',  # ok
+             '03.matter-04-AW.csv',  # ok
+             '03.matter-05-AR.csv',  # ok
+             '03.matter-06-AF.csv',  # ok
+             '03.matter-07-AI.csv',  # ok
+             '03.matter-08-AD.csv',  # ok
+             '03.matter-09-AC.csv',  # ok
+             '03.matter-10-AM.csv'  # ok
+             ]
+    for item in items:
+        insert_matter_each('audit/' + item)
 
-insert_matter('03.matter.csv')
+# insert_cycle('audit/01.cycle.csv')
+
+# insert_operation('audit/02.operation.csv')
+
+insert_matter()
 
 
 
