@@ -9,7 +9,8 @@ import csv, cx_Oracle
 
 """取得localhost oracle connection"""
 def get_local_oracle_connectin():
-    con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/A0801')
+#     con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/A0801')
+    con = cx_Oracle.connect('eflow', 'eflow', '172.22.16.76:1522/dev')
     return con
 
 
@@ -91,7 +92,7 @@ def insert_matter():
 
 # insert_operation('audit/02.operation.csv')
 
-insert_matter()
+# insert_matter()
 
 
 
