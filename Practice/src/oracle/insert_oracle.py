@@ -1,15 +1,12 @@
 # coding=utf-8
-'''
-Created on 2014/5/14
-
-@author: John Huang
-'''
 import csv
 import cx_Oracle
 
-"""取得localhost oracle connection"""
+
 def get_local_oracle_connectin():
-    con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/A0801')
+    """取得localhost oracle connection"""
+    # con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/A0801')
+    con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/a0801c.chenbro.com.tw')
     return con
 
 
@@ -31,9 +28,9 @@ def multi_insert_param(con, data):
     cursor.executemany(sql, param)
     cursor.close()
             
-    
-"""insert一筆資料"""
+
 def single_insert(con):
+    """insert一筆資料"""
     cursor = con.cursor()
     cursor.execute("insert into PYTHON_TEST values('1','johnhuang','黃獻葦')")
     cursor.close()
@@ -52,7 +49,6 @@ def single_insert_param(con):
     con.close()
     print('single_insert_param() ok')
     
-    
 
 def multi_insert_param2(con):
     param = []
@@ -65,8 +61,9 @@ def multi_insert_param2(con):
     con.close()
     print('multi_insert_param2(con) ok')
 
-"""直接讀取csv檔，insert to oracle"""
+
 def insert_cycle(file_name, default_encoding='UTF-8'):
+    """直接讀取csv檔，insert to oracle"""
     with open(file_name,'r',encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()

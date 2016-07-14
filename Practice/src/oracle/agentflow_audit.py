@@ -1,22 +1,17 @@
 # coding=utf-8
-'''
-Created on 2016/5/20
+import csv
+import cx_Oracle
 
-@author: John Huang
-'''
 
-import csv, cx_Oracle
-
-"""取得localhost oracle connection"""
 def get_local_oracle_connectin():
-#     con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/A0801')
-    con = cx_Oracle.connect('eflow', 'eflow', '172.22.16.76:1522/dev')
+    """取得localhost oracle connection"""
+    # con = cx_Oracle.connect('xxxx', 'xxxx', 'xxx.xx.xx.xx:xxxx/xxx')
+    con = cx_Oracle.connect('agentflow', 'agentflow', 'localhost:1521/a0801c.chenbro.com.tw')
     return con
 
 
-
-"""insert to audit_cycle table"""
 def insert_cycle(file_name, default_encoding='UTF-8'):
+    """insert to audit_cycle table"""
     with open(file_name, 'r', encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()
@@ -34,8 +29,8 @@ def insert_cycle(file_name, default_encoding='UTF-8'):
         print('ok')
 
 
-"""insert to insert_operation table"""
 def insert_operation(file_name, default_encoding='UTF-8'):
+    """insert to insert_operation table"""
     with open(file_name, 'r', encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()
@@ -53,8 +48,8 @@ def insert_operation(file_name, default_encoding='UTF-8'):
         print('ok')
 
 
-"""insert to insert_matter table"""
 def insert_matter_each(file_name, default_encoding='UTF-8'):
+    """insert to insert_matter table"""
     with open(file_name, 'r', encoding=default_encoding) as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         con = get_local_oracle_connectin()
