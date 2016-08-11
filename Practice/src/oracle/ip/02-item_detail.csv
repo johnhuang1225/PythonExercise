@@ -1,0 +1,39 @@
+X1-01,X1,Chassis link with Cabinet
+X1-02,X1,Chassis inside 
+X1-03,X1,top cover
+X1-04,X1,front cover/Chassis bezel
+X1-05,X1,rear panel/rear window
+X1-06,X1,inner cage
+X1-07,X1,Brade
+X1-08,X1,Chassis others
+X2-01,X2,hdd bracket/hdd cage
+X2-02,X2,hdd carrier - holder
+X2-03,X2,hdd carrier - tray
+X2-04,X2,transfer carrier
+X2-05,X2,cover/dummy
+X3-01,X3,fan bracket/cage
+X3-02,X3,fan holder/carrier
+X3-03,X3,cover/dummy
+X3-04,X3,louver
+X4-01,X4,usb bracket/card reader/indicator 
+X4-02,X4,"ODD/CD-rom/fdd, bracket/cage"
+X4-03,X4,"ODD/CD-rom/fdd, holder/carrier"
+X4-04,X4,cover/dummy
+X5-01,X5,"riser card/PCI, bracket/cage, retainer"
+X5-02,X5,"riser card/PCI , holder/carrier"
+X5-03,X5,MB support
+X6-01,X6,Backplane/Extension card
+X6-02,X6,connector/cable
+X6-03,X6,Power management
+X6-04,X6,Thermal control
+X6-05,X6,storage architecture
+X7-01,X7,fixing part/cage
+X7-02,X7,holder/carrier
+X7-03,X7,cover/dummy
+X7-04,X7,CV Bracket
+X8-01,X8,handle
+X8-02,X8,latch
+X8-03,X8,fastening
+X8-04,X8,others
+X9-01,X9,Cable arranging module
+X10-01,X10,Air Duct
